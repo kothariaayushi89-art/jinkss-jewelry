@@ -1,0 +1,483 @@
+/* JINKSS* JEWELLERY STORE - CUSTOM STYLES */
+/* Modified by: KOTHARI AAYUSHI (ID: 24229550) */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5e6d3 0%, #d4a373 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ==================== CUSTOM CSS MODIFICATIONS ==================== */
+/* These are MY custom styles added to make the website unique */
+
+/* WELCOME POPUP MODAL - Custom JS Feature */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #ffffff 0%, #f9f5f0 100%);
+    margin: 10% auto;
+    padding: 40px;
+    border: 3px solid #d4af37;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    animation: slideDown 0.5s ease;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.modal-content h2 {
+    color: #d4af37;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.modal-content p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    color: #d4af37;
+}
+
+.modal-btn {
+    background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
+    color: #1a1a1a;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+}
+
+.modal-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+}
+
+/* TEMPLATE LINK BANNER - Very Visible Original Template Link */
+.template-link-banner {
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #1a1a1a;
+    border-bottom: 4px solid #d4af37;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+.template-link {
+    color: #1a1a1a;
+    text-decoration: underline;
+    font-size: 22px;
+}
+
+.template-link:hover {
+    color: #8B0000;
+    text-decoration: none;
+}
+
+/* SECTION BADGE - Shows this is a new custom feature */
+.section-badge {
+    background: #e74c3c;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 15px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* DISCOUNT INFO BOX */
+.discount-info {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.discount-info p {
+    margin: 5px 0;
+}
+
+/* ==================== MAIN CONTAINER ==================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* HEADER */
+.header {
+    background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+    position: relative;
+}
+
+.header h1 {
+    font-size: 48px;
+    letter-spacing: 8px;
+    margin-bottom: 10px;
+    font-weight: 300;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #ffd700, #ffed4e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.header .credits {
+    font-size: 14px;
+    color: #d4af37;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.tagline {
+    font-size: 18px;
+    font-style: italic;
+    color: #c9bba5;
+    letter-spacing: 2px;
+}
+
+/* HERO SECTION */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23d4a373" width="1200" height="600"/><path fill="%23c9935a" d="M0 300L50 325L100 300L150 350L200 325L250 375L300 350L350 300L400 325L450 350L500 325L550 300L600 325L650 300L700 350L750 325L800 375L850 350L900 300L950 325L1000 350L1050 325L1100 300L1150 325L1200 300V600H0Z"/></svg>');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 30px;
+    text-align: center;
+    color: white;
+}
+
+.hero h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+.btn {
+    display: inline-block;
+    background: #d4af37;
+    padding: 15px 40px;
+    border-radius: 30px;
+    color: #1a1a1a;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    background: #f4d03f;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+}
+
+/* INTERACTIVE JS SECTION */
+.interactive-section {
+    background: #f9f5f0;
+    padding: 50px 30px;
+    text-align: center;
+    border-bottom: 2px solid #d4af37;
+}
+
+.interactive-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #2c2c2c;
+}
+
+.price-calculator {
+    max-width: 500px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.calculator-input {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+select, input[type="number"] {
+    padding: 12px 20px;
+    border: 2px solid #d4af37;
+    border-radius: 8px;
+    font-size: 16px;
+    flex: 1;
+    min-width: 150px;
+}
+
+.calc-btn {
+    background: #2c2c2c;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.calc-btn:hover {
+    background: #d4af37;
+    color: #1a1a1a;
+    transform: scale(1.05);
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #d4af37;
+    min-height: 30px;
+}
+
+/* COLLECTION */
+.collection {
+    padding: 60px 30px;
+    background: white;
+}
+
+.collection h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #2c2c2c;
+    letter-spacing: 2px;
+}
+
+.product-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.product {
+    background: linear-gradient(135deg, #f9f5f0 0%, #f3e6d6 100%);
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.product-image {
+    width: 100%;
+    height: 250px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.product h3 {
+    font-size: 24px;
+    margin: 15px 0;
+    color: #2c2c2c;
+}
+
+.product p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.product span {
+    font-weight: bold;
+    font-size: 22px;
+    color: #d4af37;
+}
+
+/* ABOUT */
+.about {
+    padding: 60px 30px;
+    text-align: center;
+    background: #f9f5f0;
+}
+
+.about h2 {
+    font-size: 36px;
+    margin-bottom: 25px;
+    color: #2c2c2c;
+}
+
+.about p {
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #555;
+}
+
+/* FOOTER */
+.footer {
+    background: #2c2c2c;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.footer a {
+    color: #d4af37;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+    color: #f4d03f;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 32px;
+    }
+    
+    .hero h2 {
+        font-size: 28px;
+    }
+    
+    .product-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-content {
+        width: 95%;
+        padding: 25px;
+    }
+}
+```
+
+---
+
+## 📁 **Final File Structure:**
+```
+your-website/
+├── index.html          ← Copy the code above
+├── style.css          ← Copy the CSS code above
+└── img/
+    ├── ring.jpg
+    ├── necklace.jpg
+    └── bracelet.jpg

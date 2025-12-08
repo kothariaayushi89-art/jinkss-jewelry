@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JINKSS – Jewellery Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- WELCOME POPUP MODAL (JS Generated) -->
+    <div id="welcomeModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeWelcome()">&times;</span>
+            <h2>✨ Welcome to JINKSS* ✨</h2>
+            <p id="popupMessage"></p>
+            <p style="margin-top: 15px; font-size: 14px; color: #666;">Tokyo's Finest Jewellery Collection</p>
+            <button class="modal-btn" onclick="closeWelcome()">Explore Collection</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- HEADER -->
+        <header class="header">
+            <h1>JINKSS*</h1>
+            <p class="credits">Created by: KOTHARI AAYUSHI | ID: 24229550</p>
+            <p class="tagline">Create Your Personalised Curator</p>
+        </header>
+
+        <!-- TEMPLATE LINK BANNER (Very Visible!) -->
+        <div class="template-link-banner">
+            🔗 <a href="https://startbootstrap.com/previews/business-casual" target="_blank" class="template-link">
+                Click Here to View Original Template (Business Casual by Start Bootstrap)
+            </a> 🔗
+        </div>
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <h2>Tokyo's Authentic Jewellery Store</h2>
+            <p>Rings • Necklaces • Bracelets</p>
+            <a href="#collection" class="btn">Shop Now</a>
+        </section>
+
+        <!-- INTERACTIVE CALCULATOR (NEW JS FUNCTION) -->
+        <section class="interactive-section">
+            <div class="section-badge">✨ NEW FEATURE ✨</div>
+            <h2>Jewellery Price Calculator</h2>
+            <div class="price-calculator">
+                <p style="margin-bottom: 20px; color: #666; font-weight: bold;">
+                    Calculate your custom jewellery price with automatic discounts!
+                </p>
+                <div class="calculator-input">
+                    <select id="itemType">
+                        <option value="">Select Jewellery Type</option>
+                        <option value="4000">Ring (¥4,000)</option>
+                        <option value="8550">Necklace (¥8,550)</option>
+                        <option value="3200">Bracelet (¥3,200)</option>
+                    </select>
+                    <input type="number" id="quantity" placeholder="Enter Quantity" min="1" value="1">
+                    <button class="calc-btn" onclick="calculatePrice()">💰 Calculate Total</button>
+                </div>
+                <div class="result" id="priceResult"></div>
+                <div class="discount-info">
+                    <p>🎁 Buy 3+ items: Get 10% OFF</p>
+                    <p>🎁 Buy 5+ items: Get 15% OFF</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- COLLECTION -->
+        <section class="collection" id="collection">
+            <h2>Our Jewellery Collection</h2>
+            <div class="product-row">
+                <div class="product">
+                    <img src="img/ring.jpg" alt="Ring" class="product-image">
+                    <h3>Rings</h3>
+                    <p>Elegant handcrafted pieces designed to capture timeless beauty and sophistication</p>
+                    <span>¥4,000</span>
+                </div>
+                <div class="product">
+                    <img src="img/necklace.jpg" alt="Necklace" class="product-image">
+                    <h3>Necklaces</h3>
+                    <p>Minimal and bold designs that complement your unique style and elegance</p>
+                    <span>¥8,550</span>
+                </div>
+                <div class="product">
+                    <img src="img/bracelet.jpg" alt="Bracelet" class="product-image">
+                    <h3>Bracelets</h3>
+                    <p>Timeless gold and silver creations perfect for any occasion</p>
+                    <span>¥3,200</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="about">
+            <h2>About JINKSS*</h2>
+            <p>
+                JINKSS* is a Tokyo-based authentic jewellery brand dedicated to creating pieces that reflect your aura, elegance, and individuality. Each piece is carefully crafted with attention to detail, combining traditional Japanese artistry with modern design sensibilities.
+            </p>
+        </section>
+
+        <!-- FOOTER (ID and Name Required) -->
+        <footer class="footer">
+            <p><strong>Student ID:</strong> 24229550 | <strong>Name:</strong> KOTHARI AAYUSHI</p>
+            <p style="margin-top: 15px; font-size: 16px;">
+                📋 <a href="https://startbootstrap.com/previews/business-casual" target="_blank">View Original Template: Business Casual by Start Bootstrap</a>
+            </p>
+            <p style="margin-top: 10px; font-size: 12px; color: #999;">
+                © 2024 JINKSS* Jewellery Store. All rights reserved.
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // WELCOME POPUP - Shows on page load with personalized greeting
+        window.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('welcomeModal');
+            const popupMsg = document.getElementById('popupMessage');
+            const hour = new Date().getHours();
+            let greeting;
+            
+            if (hour < 12) {
+                greeting = '🌅 Good Morning! Welcome to JINKSS* - Where Elegance Meets Craftsmanship';
+            } else if (hour < 18) {
+                greeting = '☀️ Good Afternoon! Discover Your Perfect Piece at JINKSS*';
+            } else {
+                greeting = '🌙 Good Evening! Welcome to Tokyo\'s Finest Jewellery Collection';
+            }
+            
+            popupMsg.textContent = greeting;
+            modal.style.display = 'block';
+        });
+
+        // Close welcome popup
+        function closeWelcome() {
+            document.getElementById('welcomeModal').style.display = 'none';
+        }
+
+        // Close popup when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('welcomeModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // PRICE CALCULATOR FUNCTION - Interactive feature with user input
+        function calculatePrice() {
+            const itemType = document.getElementById('itemType').value;
+            const quantity = document.getElementById('quantity').value;
+            const resultDiv = document.getElementById('priceResult');
+            
+            if (!itemType) {
+                resultDiv.textContent = '⚠️ Please select an item type';
+                resultDiv.style.color = '#e74c3c';
+                return;
+            }
+            
+            if (!quantity || quantity < 1) {
+                resultDiv.textContent = '⚠️ Please enter a valid quantity';
+                resultDiv.style.color = '#e74c3c';
+                return;
+            }
+            
+            const basePrice = parseInt(itemType);
+            const total = basePrice * parseInt(quantity);
+            
+            // Add discount for bulk orders
+            let discount = 0;
+            if (quantity >= 5) {
+                discount = 0.15; // 15% discount
+            } else if (quantity >= 3) {
+                discount = 0.10; // 10% discount
+            }
+            
+            const finalPrice = total * (1 - discount);
+            const savedAmount = total - finalPrice;
+            
+            if (discount > 0) {
+                resultDiv.innerHTML = `
+                    <div style="animation: slideIn 0.5s ease;">
+                        Total: <span style="text-decoration: line-through; color: #999;">¥${total.toLocaleString()}</span><br>
+                        <span style="color: #27ae60; font-size: 20px;">🎉 You Save: ¥${savedAmount.toLocaleString()} (${(discount*100)}% off)</span><br>
+                        <span style="font-size: 28px;">Final Price: ¥${finalPrice.toLocaleString()}</span>
+                    </div>
+                `;
+            } else {
+                resultDiv.innerHTML = `
+                    <div style="animation: slideIn 0.5s ease;">
+                        <span style="font-size: 28px;">Total Price: ¥${finalPrice.toLocaleString()}</span>
+                    </div>
+                `;
+            }
+            
+            resultDiv.style.color = '#d4af37';
+        }
+
+        // Smooth scroll for "Shop Now" button
+        document.querySelector('.btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('#collection').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        });
+    </script>
+</body>
+</html>
